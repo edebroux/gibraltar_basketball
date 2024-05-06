@@ -1,0 +1,1 @@
+9999999999{"name": "PyRECONSTRUCT", "version": "2.2.0", "summary": "Python tools for interacting with XML files associated with RECONSTRUCT", "requires_dist": null, "requires_python": null, "files": [{"file": "PyRECONSTRUCT-2.2.0.tar.gz", "hash": "sha256:48ed20eca8a4ff29840bf2639826339b7252c7c7456037c466ef6f323b3d8223"}], "yanked": false, "_cache_version": "2.0.0"}
