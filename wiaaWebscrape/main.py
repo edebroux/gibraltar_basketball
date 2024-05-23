@@ -14,7 +14,7 @@ def main():
 
 
 def findCodes(a):
-  # a = first file
+  # a = first file - starts with 46803 for 2022-23 Season
   count = 46803
   while True:
     while True:
@@ -55,6 +55,7 @@ def openWebsite(a):
   name = soup.find_all('h3')
   if '’' in name:
     name = name.replace('’', '')
+  # Edit to season you want data for if you want to download more data
   check = 'Varsity2023-2024GirlsBasketball'
   linkName.append(link)
   if (text[-3].text == "Yes"):
