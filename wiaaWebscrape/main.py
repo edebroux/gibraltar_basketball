@@ -14,8 +14,10 @@ def main():
 
 
 def findCodes(a):
+  # a = first file - starts with 35042 for 2021-22 Season 
   # a = first file - starts with 46803 for 2022-23 Season
-  count = 46803
+  # a = first file - starts with 66617 for 2023-24 Season
+  count = 35042
   while True:
     while True:
       linkDict = openWebsite(count)
@@ -56,7 +58,7 @@ def openWebsite(a):
   if '’' in name:
     name = name.replace('’', '')
   # Edit to season you want data for if you want to download more data
-  check = 'Varsity2023-2024GirlsBasketball'
+  check = 'Varsity2022-2023GirlsBasketball'
   linkName.append(link)
   if (text[-3].text == "Yes"):
     filler = text[-12].text + text[-10].text + text[-9].text + text[-8].text
@@ -81,6 +83,7 @@ def addGames(a, b):
       soup = BeautifulSoup(page.text, "html.parser")
       elements = []
       games = []
+      results = []
       scores = []
       dat = []
       name = soup.find('h3').text
@@ -119,6 +122,7 @@ def addGames(a, b):
           break
       for e in elements:
         if 'L ' in e or 'W ' in e:
+          results.append(str(e).strip())
           try:
             scores.append(e[2:].split('-')[0]+'-'+e[2:].split('-')[1].split(' ')[0])
           except IndexError:
@@ -128,6 +132,7 @@ def addGames(a, b):
       if row[0].replace('’', '') == name:
         row.append(games)
         row.append(scores)
+        row.append(results)
         row.append(dat[:len(games)])
         wr.writerow(row)
     
